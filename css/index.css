@@ -62,7 +62,7 @@ a {
 }
 
 .btn {
-    color: #a42e79;
+    color: #fff;
     cursor: pointer;
     display: inline-block;
     font-size: 16px;
@@ -75,7 +75,7 @@ a {
     font-family: 'Conv_AHAMONO-Regular';
     padding: 15px 15px;
     width: 160px;
-    border: 1px solid #a42e79;
+    border: 1px solid #fff;
     background-color: transparent;
     -webkit-transition: background-color 0.5s ease-out;
     -moz-transition: background-color 0.5s ease-out;
@@ -85,7 +85,7 @@ a {
 
 .btn:hover {
     text-decoration: none;
-    background-color: #a42e79;
+    background-color: #fff;
     color: #fff;
 }
 
@@ -96,7 +96,7 @@ a {
 
 .btn.beyaz:hover {
     border: 1px solid #fff;
-    color: #a42e79;
+    color: #fff;
     background-color: #fff;
 }
 
@@ -127,7 +127,7 @@ a {
 }
 
 .section#footer {
-    background-color: #f8f8f8;
+    background-color: #000;
     z-index: 20;
 }
 
@@ -352,8 +352,8 @@ a {
 }
 
 .menu a:hover {
-    color: #a42e79;
-    border-bottom: 2px solid #a42e79;
+    color: #fff;
+    border-bottom: 2px solid #fff;
 }
 
 .menu li {
@@ -467,7 +467,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(14, 15, 21, 0.97);
+    background-color: #000;
     z-index: 90;
     visibility: hidden;
     opacity: 0;
@@ -546,7 +546,7 @@ a:hover .fa-instagram {
 }
 
 .fixed .featured h3 {
-    color: #a42e79;
+    color: #fff;
 }
 
 .fixed .featured p {
@@ -555,7 +555,7 @@ a:hover .fa-instagram {
 }
 
 .fixed .featured p a {
-    color: #a42e79;
+    color: #fff;
 }
 
 .fixed .text {
@@ -582,6 +582,7 @@ a:hover .fa-instagram {
     text-overflow: -o-ellipsis-lastline;
     position: relative;
     display: block;
+	color: white;
 }
 
 
@@ -680,7 +681,7 @@ a:hover .fa-instagram {
 }
 
 #footer .content h5 {
-    color: #a42e79;
+    color: #fff;
 }
 
 #footer .content ul {
@@ -692,7 +693,7 @@ a:hover .fa-instagram {
 }
 
 #footer .content ul li a {
-    color: #000;
+    color: #fff;
     font-size: 36px;
     font-family: 'Conv_HelveticaNeueLTPro-Hv';
     font-size: 1.9vw;
@@ -846,18 +847,18 @@ a:hover .fa-instagram {
 }
 
 .circle svg circle {
-    fill: #a42e79;
+    fill: #fff;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -webkit-transition: all 0.3s;
 }
 
 .aboutPg #strategy h2 span {
-    color: #a42e79;
+    color: #fff;
 }
 
 .aboutPg #strategy h2 span b:nth-child(1) {
-    color: #a42e79;
+    color: #fff;
 }
 
 .aboutPg #strategy h2 span b:nth-child(2) {
@@ -894,7 +895,7 @@ canvas#bacterium {
 }
 
 .aboutPg #strategy h2 span {
-    color: #a42e79;
+    color: #fff;
 }
 
 .aboutPg #strategy ul {
@@ -957,7 +958,7 @@ canvas#bacterium {
 .aboutPg #whatwedo .right {}
 
 .aboutPg #whatwedo h2 {
-    color: #a42e79;
+    color: #fff;
 }
 
 .aboutPg #whatwedo p {
@@ -986,7 +987,7 @@ canvas#bacterium {
 }
 
 .aboutPg #whatwedo ul h5 {
-    color: #a42e79;
+    color: #fff;
     display: inline-block;
     vertical-align: top;
     width: 25%;
@@ -1040,7 +1041,7 @@ canvas#bacterium {
     padding: 10px;
     float: left;
     text-align: left;
-    color: #a42e79;
+    color: #fff;
     position: relative;
     z-index: 9;
 }
@@ -1061,7 +1062,7 @@ canvas#bacterium {
 
 .aboutPg .photos-text p {
     font-size: 14px;
-    color: #a42e79;
+    color: #fff;
     position: absolute;
     margin: 8px;
     bottom: 10px;
@@ -1072,7 +1073,7 @@ canvas#bacterium {
 }
 
 .aboutPg .photos-text p a {
-    color: #a42e79;
+    color: #fff;
 }
 
 .aboutPg .photos-text .fa {
@@ -1138,7 +1139,7 @@ canvas#bacterium {
 }
 
 .aboutPg #clients h2 {
-    color: #a42e79;
+    color: #fff;
 }
 
 .aboutPg #footer .right {
@@ -2135,7 +2136,7 @@ h5.phone {
 .pagination {
     color: #000000;
     height: 100vh;
-    background-color: #f2f2f2;
+    background-color: transparent;
     position: fixed;
     width: 70px;
     text-align: center;
@@ -2143,18 +2144,21 @@ h5.phone {
     transition-delay: 0.5s;
     transition-duration: 0.5s;
     transition-property: background-color;
+	border-right: #fff thin;
 }
 
 .pagination ul {
     display: table;
     width: 100%;
     height: 100%;
+	border-right: #fff thin;
 }
 
 .pagination ul li {
     display: block;
     height: 50vh;
     opacity: 1;
+	border-right: #fff thin;
 }
 
 .pagination ul li a {
@@ -2174,13 +2178,15 @@ h5.phone {
 }
 
 .pagination ul li a:hover {
-    background-color: #9f2e7e;
-    border-color: #9f2e7e;
+    background-color: transparent;
+    border-color: #fff;
     color: #fff;
 }
 
 .pagination ul li a:hover p {
     color: #fff;
+	background-color: transparent;
+    border-color: #fff;
 }
 
 .pagination ul li.prev a {
@@ -2192,7 +2198,8 @@ h5.phone {
 }
 
 .pagination ul li.prev .scroll-up {
-    background-image: url("http://dwarfprojects.com/clients/dwarf/img/arrow-black-top.png");
+    background-image: url("../img/arrow-white-bottom.png");
+	transform: rotate(180deg);
     width: 20px;
     height: 20px;
     margin: 0 auto;
@@ -2213,18 +2220,20 @@ h5.phone {
 }
 
 .pagination ul li.next .scroll-down {
-    background-image: url("http://dwarfprojects.com/clients/dwarf/img/arrow-black-bottom.png");
+    background-image: url("../img/arrow-white-bottom.png");
+	transform: rotate(180deg);
     width: 20px;
     height: 20px;
     margin: 0 auto;
 }
 
 .pagination ul li.prev a:hover .scroll-up {
-    background-image: url("http://dwarfprojects.com/clients/dwarf/img/arrow-white-top.png");
+   	background-image: url("../img/arrow-white-bottom.png");
+	transform: rotate(180deg);
 }
 
 .pagination ul li.next a:hover .scroll-down {
-    background-image: url("http://dwarfprojects.com/clients/dwarf/img/arrow-white-bottom.png");
+    background-image: url("../img/arrow-white-bottom.png");
 }
 
 .pagination ul li p {
@@ -2428,7 +2437,7 @@ h5.phone {
     right: 0;
     width: 100%;
     height: 5vh;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 100%);
+/*    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 100%);*/
     z-index: 1;
 }
 
@@ -2440,7 +2449,7 @@ h5.phone {
     right: 0;
     width: 100%;
     height: 5vh;
-    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 100%);
+/*    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 100%);*/
     z-index: 1;
 }
 
@@ -2464,7 +2473,7 @@ h5.phone {
 @-moz-document url-prefix() {
     .workPg .title {
         background-image: none;
-        color: #a42e79;
+        color: #fff;
     }
     .frame:after,
     .frame:before {
