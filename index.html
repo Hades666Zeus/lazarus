@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta property="og:url" content="index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lazarus" />
+    <meta property="og:description" content="Human culture encapsulated on Mars" />
+    <meta property="og:image" content="#" />   <!-- change image -->
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="#">  <!-- change url -->
+    <meta name="twitter:url" content="index.html">
+    <meta name="twitter:title" content="Lazarus">
+    <meta name="twitter:description" content="Human culture encapsulated on Mars">
+    <meta name="twitter:image" content="#">  <!-- change image -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lazarus</title>
+    <meta name="description" content="Human culture encapsulated on Mars">
+    <link href="img/L1.png" rel="icon" type="image/png" />  <!-- change image -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/screen.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+    
+
+    <style>#video1 {
+            position: relative;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 1;
+        }
+
+        .sound {
+            position: absolute;
+            z-index: 999;
+            bottom: 5.5vh;
+            right: 12vw;
+            width: 90px;
+        }
+
+        .soundToggle {
+            color: #fff;
+            font-size: 13px;
+            font-family: 'Conv_AHAMONO-Regular';
+            opacity: 0.5;
+            display: block;
+        }
+
+        .loading {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+            position: absolute;
+            background: #0d0e13;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999999;
+        }
+
+        .percentage {
+            margin-top: 70px;
+            position: relative;
+            padding: initial;
+            height: initial;
+            display: inline-block;
+            font-size: 250px;
+            font-family: 'Lato', sans-serif;
+            color: rgba(200, 198, 194, 0.31);
+            z-index: -1;
+            -webkit-transition: .3s all ease-out;
+            transition: .3s all ease-out;
+        }
+
+        .percentage:before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background-color: #0d0e13;
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+                transform: scale(1.1);
+        }
+
+        @-webkit-keyframes percentageAnimation {
+            to {
+                -webkit-transform: scale(0.44);
+                        transform: scale(0.44);
+            }
+        }
+        @keyframes percentageAnimation {
+            to {
+                -webkit-transform: scale(0.44);
+                        transform: scale(0.44);
+            }
+        }
+
+        .percentage-animation:before {
+            -webkit-animation: percentageAnimation .6s forwards;
+                    animation: percentageAnimation .6s forwards;
+            -webkit-animation-delay: .5s;
+                    animation-delay: .5s;
+        }
+
+        .percentage:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 50%;
+            width: 100%;
+            left: 0;
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 14, 19, 0)), color-stop(70%, #0d0e13));
+            background: -webkit-linear-gradient(rgba(13, 14, 19, 0), #0d0e13 70%);
+            background: linear-gradient(rgba(13, 14, 19, 0), #0d0e13 70%);
+        }
+
+        .loading-text {
+            margin-top: 50px;
+            font-family: 'vinkelmedium', sans-serif;
+            font-size: 22px;
+            color: #c8c6c2;
+            -webkit-transition: 1.5s all ease-out;
+            transition: 1.5s all ease-out;
+        }
+
+        @-webkit-keyframes eclipse {
+            30% {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        @keyframes eclipse {
+            30% {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        .l1 {
+            -webkit-animation-name: eclipse;
+                    animation-name: eclipse;
+            -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+            -webkit-animation-duration: 3s;
+                    animation-duration: 3s;
+            z-index: 9999 !important;
+        }
+
+        @-webkit-keyframes eclipse2 {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes eclipse2 {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .l2 {
+            opacity: 0;
+            -webkit-animation: eclipse2 1.5s both;
+                    animation: eclipse2 1.5s both;
+            -webkit-animation-delay: 1.5s;
+                    animation-delay: 1.5s;
+        }
+
+        @font-face {
+            font-family: 'vinkelmedium';
+            src: url('fonts/vinkel-medium-webfont.woff2') format('woff2'),
+                url('fonts/vinkel-medium-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @media screen and (max-width: 480px) {
+            .percentage {
+                font-size: 200px;
+            }
+
+            .l1, .l2 {
+                max-width: 220px !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body class="homeBg">
+
+    <div class="loading" id="loading">
+        <img src="img/L1.png" class="js-l1" style="position:absolute; left:0; max-width:260px; right:0; top:0; bottom:0; margin:auto; z-index:9; pointer-events: none; opacity: 0;">
+        <img src="img/L2.png" class="l2" style="position:absolute; left:0; right:0;  max-width:260px;top:0; bottom:0; margin:auto; z-index1;  pointer-events: none;">
+        <div class="percentage">25</div>
+        <div class="loading-text">MISSION LAZARUS</div>
+    </div>
+    <div class="homePg" id="body" style="visibility:hidden;">
+        <div class="fixed" style="display:none;">
+           
+            <div class="text text-scroll titles all-anim">
+                <div class="frame">
+                    <div class="scroll all-anim">
+                        <div class="title-wrapper">
+                           
+                            <p>
+                                You can be  a part of lazarus, by sending a peice of your culture to Mars.   
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="pagination transparent">
+            <ul>
+                <li class="prev">
+                    <a>
+                        <i class="scroll-up"></i>
+                        <p></p>
+                    </a>
+                </li>
+                <li class="next">
+                    <a>
+                        <p style="bottom: 50%; display:block;">discover us</p>
+                        <i class="scroll-down"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="fullpage">
+            <div class="section" id="cover" data-menu-color="white" data-logo-color="white">
+                <div class="sound">
+                    <a class="soundToggle">sound : <span>ON</span></a>
+                </div>
+                <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; z-index:-1;">
+                    <video id="video1" loop>
+                    <source src="dp" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                </div>
+
+                <div class="content">
+                    <h1>Interplanetary<br> cultural<br>exodus</h1>
+                    <p class="c-w">Human culture encapsulated on Mars</p>
+                </div>
+            </div>
+            
+            <div class="section" id="footer" data-menu-color="black" data-logo-color="black">
+                <div class="content">
+                    <div class="left">
+                        <a href="" class="btn">What is this?</a>
+                    </div>
+                    <div class="right">
+                        <h5>Interested?</h5>
+                        <ul>
+                            <li>
+                                <a href="https://ereborfin.tech">About Us<i class="icon"><?xml version="1.0" encoding="utf-8"?> <svg id=katman_1 style="enable-background:new 0 0 20 20"version=1.1 viewBox="0 0 20 20"width=20px x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st0{fill-rule:evenodd;clip-rule:evenodd;fill:none}.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#000000}</style><g><path class=st0 d=M12.2,20l-1.4-1.4L20.5,9l1.4,1.4L12.2,20z /><path class=st0 d=M12.2,0l-1.4,1.4l9.6,9.6l1.4-1.4L12.2,0z /><path class=st0 d=M1.9,9h18v2h-18V9z /></g><g><g><polygon class=st1 points="20,9.6 10.4,0 9,1.4 16.6,9 0,9 0,11 16.6,11 9,18.6 10.4,20 20,10.4 19.6,10 		"/></g></g></svg></i></a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@ereborfin.tech">Get in Touch<i class="icon"><?xml version="1.0" encoding="utf-8"?> <svg id=katman_1 style="enable-background:new 0 0 20 20"version=1.1 viewBox="0 0 20 20"width=20px x=0px xml:space=preserve xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink y=0px><style>.st0{fill-rule:evenodd;clip-rule:evenodd;fill:none}.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#000000}</style><g><path class=st0 d=M12.2,20l-1.4-1.4L20.5,9l1.4,1.4L12.2,20z /><path class=st0 d=M12.2,0l-1.4,1.4l9.6,9.6l1.4-1.4L12.2,0z /><path class=st0 d=M1.9,9h18v2h-18V9z /></g><g><g><polygon class=st1 points="20,9.6 10.4,0 9,1.4 16.6,9 0,9 0,11 16.6,11 9,18.6 10.4,20 20,10.4 19.6,10 		"/></g></g></svg></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bar transparentNav">
+            <a href="index.html" class="logo">
+<!--                <img src="img/lazarus black.png" class="dwarf-planet-logo">-->
+              <img src="img/lazarus black.png" style="width: 100%">
+            </a>
+            <a class="cd-nav-trigger">
+                <div class="hamburger-menu menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </a>
+        </div>
+        <div id="cd-nav" class="cd-nav">
+            <div class="cd-navigation-wrapper">
+                <div class="menu">
+                    <ul>
+                        <li><a href="#" class="soon">Keep Looking...<br><h6>White paper, Coming Soon</h6></a></li>
+                        <li><a class="soon">Tokenized Assets for Space</a></li>
+                    </ul>
+                </div>
+                <div class="menu-info">
+                    <div class="right">
+                        <div class="m-adress">
+                            <h4>France</h4>
+<!--                            <p>Istiklal Cad., Mısır Apt.<br>2. Floor No: 163/8<br>Paris - France</p>-->
+<!--                            <h5 class="phone">+90 212 274 8115</h5>-->
+                        </div>
+                        <div class="m-adress">
+                            <h4>India</h4>
+                            <p>Suite Number I304,<br>Aparna Kanopy,<br>Near Apparel Export Park,<br>Kompally, Hyderabad.</p>
+<!--                            <h5 class="phone">+</h5>-->
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="https://www.linkedin.com/company/erebor-fintech/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/jquery-1.9.1.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.5.0/localforage.min.js"></script>-->
+    <script type="text/javascript">
+        /*var currentDate = new Date();
+        localforage.setDriver(localforage.LOCALSTORAGE);
+        var lastLoad = localforage.getItem('last-load', function(err, value) {
+            if (value == null) {
+                onLoadFunction();
+                localforage.setItem("last-load", currentDate);
+            } else {
+                localforage.getItem("last-load", function(err, value) {
+                    lastLoad = new Date(value);
+                    var hoursDiff = (currentDate.getHours() - lastLoad.getHours()) >= 2;
+                    if (hoursDiff) {
+                        onLoadFunction();
+                        localforage.setItem("last-load", currentDate);
+                    } else {
+                        hideLoader(0);
+                    }
+                })
+            }
+        });*/
+        onLoadFunction();
+        function onLoadFunction() {
+            $('.js-l1').addClass('l1');
+
+            var baseTime = 3000;
+            var percentArray = [25, 49, 78, 98];
+            var textArray = ['Launching in...', '3', '2', '1'];
+            var percentIndex = 0;
+            var textIndex = 0;
+            var percentage = $(".percentage");
+            var loadingText = $('.loading-text');
+            var percentageTimer = baseTime / percentArray.length;
+            var textTimer = baseTime / textArray.length;
+            var percentOpacityTimer = percentageTimer / 2;
+            var textOpacityTimer = textTimer / 2;
+
+            var percentInterval;
+            var textInterval;
+
+            setTimeout(function() {
+                hideLoader(300);
+            }, baseTime + percentageTimer);
+
+            var firstPercentInit = true;
+
+            function setPercentage () {
+                if (firstPercentInit) {
+                    percentage.addClass('percentage-animation');
+                    firstPercentInit = false;
+                } else {
+                    percentage.css('opacity', 0);
+                }
+
+                setTimeout(function() {
+                    if (percentIndex == percentArray.length) { return; }
+                    percentage.text(percentArray[percentIndex]);
+                    percentage.css('opacity', 1);
+                    percentIndex++;
+                }, percentOpacityTimer);
+
+                if (percentIndex == percentArray.length) {
+                    clearInterval(percentInterval);
+                }
+
+                if (!percentInterval) {
+                    percentInterval = setInterval(setPercentage, percentageTimer);
+                }
+            }
+            setPercentage();
+
+
+            function setLoadingText () {
+                loadingText.css('opacity', 0);
+
+                setTimeout(function() {
+                    if (textIndex == textArray.length) { return; }
+                    loadingText.text(textArray[textIndex]);
+                    loadingText.css('opacity', 1);
+                    textIndex++;
+                }, textOpacityTimer);
+
+                if (textIndex == textArray.length) {
+                    clearInterval(textInterval);
+                }
+
+                if (!textInterval) {
+                    textInterval = setInterval(setLoadingText, textTimer);
+                }
+            }
+
+            setLoadingText();
+
+            /*var alertLoop = function(i) {
+                if (arr[i]) {
+                    $(".percentage").text(arr[i]);
+                    setTimeout(function() {
+                        alertLoop(i + 1);
+                    }, 300);
+                }
+                if (arr[i] == 100) {
+                    // alert("Ready!");
+                }
+            }
+            alertLoop(0);*/
+        }
+
+        function hideLoader (fade) {
+            document.getElementById("body").style.visibility = 'visible';
+            $("#loading").fadeOut(fade);
+            var vid = document.getElementById("video1");
+            setTimeout(function() {
+                vid.play();
+            }, 100)
+        }
+
+
+        (function() {
+            $('.hamburger-menu').on('click', function() {
+                $('.bar').toggleClass('animate');
+            });
+        })();
+    </script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(document).on("ready", function() {
+            var $vid = document.getElementById('video1');
+
+            function calculateNewSize() {
+                var videoWidth,
+                    videoHeight,
+                    videoAspectRatio = 16 / 9,
+                    windowWidth = window.innerWidth,
+                    windowHeight = window.innerHeight,
+                    windowAspectRatio = window.innerWidth / window.innerHeight;
+
+                if (windowAspectRatio < videoAspectRatio) {
+                    videoHeight = windowHeight;
+                    videoWidth = Math.ceil(videoHeight * videoAspectRatio);
+                } else {
+                    videoWidth = windowWidth;
+                    videoHeight = videoWidth / videoAspectRatio;
+                }
+
+
+                $vid.style.width = videoWidth + 'px';
+                $vid.style.height = videoHeight + 'px';
+            }
+
+
+            window.onresize = calculateNewSize;
+
+            calculateNewSize();
+
+            var vid = document.getElementById("video1");
+            $(".soundToggle").click(function() {
+                if ($("span", this).text() == "ON") {
+                    $("span", this).text("OFF");
+                    vid.muted = true;
+                } else {
+                    $("span", this).text("ON");
+                    vid.muted = false;
+                }
+            });
+            $('.next a').click(function() {
+                $.fn.fullpage.moveSectionDown();
+            });
+            $('.prev a').click(function() {
+                $.fn.fullpage.moveSectionUp();
+            });
+            var square = $(".bar, .bar:after, .bar:before");
+            var menutxt = $(".cd-nav-trigger p");
+            var logoPath = $(".logo-path");
+            var src = $(".fixed .btn");
+            $('#fullpage').fullpage({
+                onLeave: function(index, nextIndex, direction) {
+                    //after leaving
+                    if (index == 1 && direction == 'down') {
+                        $(".pagination").removeClass("transparent");
+                        $(".prev p").text("Mission Lazarus.");
+                        $(".next p").text("next work.");
+                        $(".fixed").delay(300).show(0);
+                        $(".menu-header").fadeOut();
+
+                    }
+                    if (index == 2 && direction == 'up') {
+                        $(".pagination ul li.next p").show();
+                        $(".prev p").text("");
+                        $(".next p").text("Discover us");
+                        //$(".fixed").css("z-index", "-1");
+                        $(".pagination").addClass("transparent");
+                        $(".fixed").hide();
+                        $(".menu-header").fadeIn();
+                        $vid.currentTime = 0;
+                        $vid.play();
+
+
+
+                    }
+                    if (direction == 'down') {
+
+                        var logoColor = $(this).next(".section").attr("data-logo-color");
+                        var menuColor = $(this).next(".section").attr("data-menu-color");
+                        square.css("background", menuColor);
+                        menutxt.css("color", menuColor);
+                        logoPath.css("fill", logoColor);
+                        if (index == $('#fullpage .section').length - 1) {
+                            $(".pagination").addClass("remove-next");
+                        }
+                        var dataSrc = $(this).next(".section").attr("data-src");
+                        src.attr("href", dataSrc);
+
+
+                    } else if (direction == 'up') {
+                        var logoColor = $(this).prev(".section").attr("data-logo-color");
+                        var menuColor = $(this).prev(".section").attr("data-menu-color");
+                        square.css("background", menuColor);
+                        menutxt.css("color", menuColor);
+                        logoPath.css("fill", logoColor);
+                        $(".pagination").removeClass("remove-next");
+                        var dataSrc = $(this).prev(".section").attr("data-src");
+                        src.attr("href", dataSrc);
+                    }
+                },
+                afterLoad: function(anchorLink, index) {
+                    var loadedSection = $(this);
+                    if (index == 5) {
+                        $(".dwarf-planet-logo").removeClass("fadeOutDown").addClass("fadeInUp");
+                    }
+                }
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>
