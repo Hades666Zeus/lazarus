@@ -209,6 +209,13 @@
 }
 }
 </style>
+   <style>
+	   @media only screen and (max-width: 760px){
+		   .mobilebtn{
+			   display: none;
+		   }
+	   }
+		</style>
     </head>
 
     <body class="homeBg">
@@ -231,7 +238,7 @@
       <div class="pagination transparent">
     <ul>
           <li class="prev"> <a> <i class="scroll-up"></i>
-            <p></p>
+            <p style="bottom: 50%; display:block;">Mission Lazarus.</p>
             </a> </li>
           <li class="next"> <a>
             <p style="bottom: 50%; display:block;">discover us</p>
@@ -242,13 +249,11 @@
     <div class="section" id="cover" data-menu-color="white" data-logo-color="white">
           <div class="sound"> <a class="soundToggle">sound : <span>ON</span></a> </div>
           <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; z-index:-1;">
-        <video id="video1" preload="auto" autoplay>
+        <video id="video1">
+             <source src="http://lazarusmission.space/dp.mp4" type="video/mp4">
               <source src="http://lazarusmission.space/dp.webm" type="video/webm">
-              <source src="http://lazarusmission.space/dp.mp4" type="video/mp4">
               Your browser does not support HTML5 video. </video>
-              <script> 
-    document.getElementById('video1').play(); 
-</script>
+             
       </div>
           <div class="content">
         <h1>Interplanetary<br>
@@ -259,7 +264,7 @@
         </div>
     <div class="section" id="footer" data-menu-color="white" data-logo-color="white">
           <div class="content">
-        <div class="left"> <a href="" class="btn">What is this?</a> </div>
+        <div class="left mobilebtn"> <a href="" class="btn">What is this?</a> </div>
         <div class="right">
               <h5>Interested?</h5>
               <ul>
@@ -473,14 +478,14 @@
                     if (index == 1 && direction == 'down') {
                         $(".pagination").removeClass("transparent");
                         $(".prev p").text("Mission Lazarus.");
-                        $(".next p").text("next work.");
+//                        $(".next p").text("next work.");
                         $(".fixed").delay(300).show(0);
-                        $(".menu-header").fadeOut();
+                        $(".menu-header").fadeIn();
 
                     }
                     if (index == 2 && direction == 'up') {
                         $(".pagination ul li.next p").show();
-                        $(".prev p").text("");
+                        $(".prev p").text("Mission Lazarus.");
                         $(".next p").text("Discover us");
                         //$(".fixed").css("z-index", "-1");
                         $(".pagination").addClass("transparent");

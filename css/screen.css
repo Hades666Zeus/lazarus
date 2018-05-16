@@ -1066,7 +1066,7 @@
         display: none;
     }
     .transparentNav {
-        background-color: transparent;
+        background-color: black;
     }
     .transparentNav .logo-path {
         fill: white !important;
